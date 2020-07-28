@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="552.0" prefWidth="765.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="ejercicioscrumsnake.Main">
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="800.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejercicioscrumsnake.Main">
     <children>
-        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Pane layoutX="1.0" prefHeight="100.0" prefWidth="700.0" style="-fx-background-color: GRAY;">
+         <children>
+              <Label fx:id="label" layoutX="18.0" layoutY="16.0" minHeight="16" minWidth="69" prefHeight="65.0" prefWidth="171.0" text="Puntaje:">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Label>
+            <Label fx:id="puntaje" layoutX="181.0" layoutY="26.0" prefHeight="54.0" prefWidth="52.0">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="Tablero" layoutX="-4.0" layoutY="98.0" prefHeight="690.0" prefWidth="708.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="292.0" mnemonicParsing="false" text="JUGAR">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
     </children>
 </AnchorPane>
