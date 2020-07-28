@@ -19,6 +19,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 
 /**
  *
@@ -31,17 +32,26 @@ public class Main implements Initializable {
     @FXML
     private AnchorPane anchor;
     
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+    
     
     int cont=0;
+    @FXML
+    private Label puntaje;
+    @FXML
+    private Pane Tablero;
+    @FXML
+    private Button Binicio;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
   
         
+        
+        
+    }    
+
+    @FXML
+    private void iniciarjuego(ActionEvent event) {
         Timer timer = new Timer();
         
         TimerTask tarea = new TimerTask() {
@@ -54,8 +64,8 @@ public class Main implements Initializable {
         
         
         timer.schedule(tarea, 0,1000);
-        
-    }    
+        Binicio.setVisible(false);
+    }
 
     
 }

@@ -24,7 +24,7 @@
       </Pane>
       <Pane fx:id="Tablero" layoutX="-4.0" layoutY="98.0" prefHeight="690.0" prefWidth="708.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="292.0" mnemonicParsing="false" text="JUGAR">
+            <Button fx:id="Binicio" alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="292.0" mnemonicParsing="false" onAction="#iniciarjuego" text="JUGAR">
                <font>
                   <Font size="40.0" />
                </font>
