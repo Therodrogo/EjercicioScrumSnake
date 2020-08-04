@@ -31,16 +31,21 @@ public class Main implements Initializable {
     private Label label;
     @FXML
     private AnchorPane anchor;
-    
-    
-    
+
     int cont=0;
+    
     @FXML
     private Label puntaje;
     @FXML
     private Pane Tablero;
     @FXML
     private Button Binicio;
+    @FXML
+    private Pane paneTablero;
+    int x=5;
+    int y=5;
+    Tablero tablero = new Tablero();
+    Serpiente serpiente = new Serpiente(x,y);
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -52,12 +57,21 @@ public class Main implements Initializable {
 
     @FXML
     private void iniciarjuego(ActionEvent  event) {
+        paneTablero.setVisible(true);
+        
+        //cargar Serpiente
+        //tablero.posicionSerpiente(serpiente.getActualX(), serpiente.getActualY());
+      
+        //cargar Tablero más la serpiente
+        paneTablero.getChildren().add(tablero.getTablero());
+        
+        
         Timer timer = new Timer();
         
         TimerTask tarea = new TimerTask() {
             @Override
             public void run() {
-                System.out.println(cont);
+                //System.out.println(cont);
                 cont++;
             }
         };
@@ -70,6 +84,95 @@ public class Main implements Initializable {
     @FXML
     private void salir(ActionEvent event) {
         System.exit(0);
+    }
+
+    @FXML
+    private void flechasTeclado(KeyEvent event) {
+        
+        if (event.getCode()== KeyCode.UP) {
+            y = y-1;
+
+            serpiente.posicionActual(x, y);
+            
+            //cargar Serpiente
+            try {
+                tablero.posicionSerpiente(serpiente.getActualX(), serpiente.getActualY());
+                tablero.cambiarTablero(x, y+1);
+            } catch (Exception e) {
+                System.out.println("Murio Serpiente");
+            }
+            
+            
+            //cargar Tablero más la serpiente
+            try {
+                paneTablero.getChildren().add(tablero.getTablero());
+            } catch (Exception e) {
+            }
+            
+        }
+        if (event.getCode()== KeyCode.RIGHT) {
+            
+            x = x+1;
+            serpiente.posicionActual(x, y);
+            
+            //cargar Serpiente
+            try {
+                tablero.posicionSerpiente(serpiente.getActualX(), serpiente.getActualY());
+                tablero.cambiarTablero(x-1, y);
+            } catch (Exception e) {
+                System.out.println("Murio Serpiente");
+            }
+            
+           
+            //cargar Tablero más la serpiente
+            try {
+                paneTablero.getChildren().add(tablero.getTablero());
+            } catch (Exception e) {
+            }
+
+        }
+        if (event.getCode()== KeyCode.DOWN) {
+            
+            y = y+1;
+            serpiente.posicionActual(x, y);
+            
+            //cargar Serpiente
+            try {
+                tablero.posicionSerpiente(serpiente.getActualX(), serpiente.getActualY());
+                tablero.cambiarTablero(x, y-1);
+            } catch (Exception e) {
+                System.out.println("Murio Serpiente");
+            }
+            
+            
+            
+            //cargar Tablero más la serpiente
+            try {
+                paneTablero.getChildren().add(tablero.getTablero());
+            } catch (Exception e) {
+            }
+
+        }
+        if (event.getCode()== KeyCode.LEFT) {
+            x = x-1;
+            serpiente.posicionActual(x, y);
+            
+            //cargar Serpiente
+            try {
+                tablero.posicionSerpiente(serpiente.getActualX(), serpiente.getActualY());
+                tablero.cambiarTablero(x+1, y);
+            } catch (Exception e) {
+                System.out.println("Murio Serpiente");
+            }
+            
+            //cargar Tablero más la serpiente
+            try {
+                paneTablero.getChildren().add(tablero.getTablero());
+            } catch (Exception e) {
+            }
+
+        }
+        
     }
     
     

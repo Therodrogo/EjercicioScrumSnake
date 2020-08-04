@@ -17,39 +17,67 @@ import java.util.ArrayList;
  */
 public class Serpiente {
 
-    public ArrayList<Point> cola = new ArrayList<Point>();
-    public int posicionX = 0;
-    public int posicionY = 0;
-
-    public Serpiente()
-    {
-        cola.add(new Point(posicionX,posicionY));
-    }
     
-    public ArrayList<Point> getCola()
-    {
-        return cola;
-    }
-
-    public void dibujar (Graphics g)
-    {
-        //g.setColor(COLOR.BLUE);
-
-    }
+    private ArrayList<Integer> posicionX = new ArrayList();
+    private ArrayList<Integer> posicionY = new ArrayList();
     
-    public void mover()
-    {
+    private int actualX;
+    private int actualY;
             
+    
+
+    public Serpiente(Integer x,Integer y)
+    {
+        posicionX.add(x);
+        posicionY.add(y);
     }
 
-    public void crecer()
-    {
-        cola.add(new Point());
+    public ArrayList<Integer> getPosicionX() {
+        return posicionX;
     }
 
-    public void direcciones()
-    {
+    public ArrayList<Integer> getPosicionY() {
+        return posicionY;
+    }
+
+    public void setPosicionX(int x) {
+        posicionX.add(x);
+    }
+
+    public void setPosicionY(int y) {
+        posicionY.add(y);
+    }
+    
+    public void posicionActual(int x, int y){
         
+        actualX =x;
+        actualY =y;
     }
+
+    public int getActualX() {
+        return actualX;
+    }
+
+    public int getActualY() {
+        return actualY;
+    }
+    
+    
+    public void imprimir(){
+        
+        
+        for (int i = 0; i < posicionX.size(); i++) {
+                
+            System.out.println(posicionX.get(i)+" , "+posicionY.get(i));
+        }
+    }
+    
+    
+    
+    
+    
+    
+
+
 
 }

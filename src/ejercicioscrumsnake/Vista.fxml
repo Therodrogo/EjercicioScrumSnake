@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="800.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejercicioscrumsnake.Main">
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="528.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejercicioscrumsnake.Main">
     <children>
-      <Pane layoutX="1.0" prefHeight="100.0" prefWidth="700.0" style="-fx-background-color: GRAY;">
+      <Pane layoutX="1.0" prefHeight="100.0" prefWidth="707.0" style="-fx-background-color: GRAY;">
          <children>
               <Label fx:id="label" layoutX="18.0" layoutY="16.0" minHeight="16" minWidth="69" prefHeight="65.0" prefWidth="171.0" text="Puntaje:">
                <font>
@@ -20,21 +20,22 @@
                   <Font size="37.0" />
                </font>
             </Label>
-            <Button layoutX="667.0" mnemonicParsing="false" onAction="#salir" prefHeight="32.0" prefWidth="34.0" style="-fx-background-color: red;" text="X" textFill="WHITE">
+            <Button layoutX="675.0" layoutY="-3.0" mnemonicParsing="false" onAction="#salir" prefHeight="32.0" prefWidth="34.0" style="-fx-background-color: red;" text="X" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Pane fx:id="Tablero" layoutX="-4.0" layoutY="98.0" prefHeight="700.0" prefWidth="700.0">
+      <Pane fx:id="Tablero" layoutX="-4.0" layoutY="98.0" prefHeight="528.0" prefWidth="711.0">
          <children>
-            <Button fx:id="Binicio" alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="292.0" mnemonicParsing="false" onAction="#iniciarjuego" text="JUGAR">
+            <Button fx:id="Binicio" alignment="CENTER" contentDisplay="CENTER" layoutX="265.0" layoutY="190.0" mnemonicParsing="false" onAction="#iniciarjuego" text="JUGAR">
                <font>
                   <Font size="40.0" />
                </font>
             </Button>
          </children>
       </Pane>
+      <Pane fx:id="paneTablero" layoutX="-4.0" layoutY="99.0" onKeyPressed="#flechasTeclado" prefHeight="528.0" prefWidth="711.0" visible="false" />
     </children>
 </AnchorPane>
