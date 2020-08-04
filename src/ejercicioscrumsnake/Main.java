@@ -51,7 +51,7 @@ public class Main implements Initializable {
     }    
 
     @FXML
-    private void iniciarjuego(ActionEvent event) {
+    private void iniciarjuego(ActionEvent  event) {
         Timer timer = new Timer();
         
         TimerTask tarea = new TimerTask() {
@@ -67,5 +67,10 @@ public class Main implements Initializable {
         Binicio.setVisible(false);
     }
 
+    @FXML
+    private void salir(ActionEvent event) {
+        System.exit(0);
+    }
+    
     
 }

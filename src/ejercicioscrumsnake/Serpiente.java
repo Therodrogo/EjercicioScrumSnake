@@ -1,3 +1,5 @@
+package ejercicioscrumsnake;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -7,7 +9,7 @@ import java.util.ArrayList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicioscrumsnake;
+
 
 /**
  *
@@ -31,21 +33,21 @@ public class Serpiente {
 
     public void dibujar (Graphics g)
     {
-        g.setColor(COLOR.BLUE);
+        //g.setColor(COLOR.BLUE);
 
     }
     
-    public mover()
+    public void mover()
     {
             
     }
 
-    public crecer()
+    public void crecer()
     {
         cola.add(new Point());
     }
 
-    public direcciones()
+    public void direcciones()
     {
         
     }
